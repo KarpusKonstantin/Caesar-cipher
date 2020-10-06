@@ -1,19 +1,19 @@
 const checkArgs = require('./app/checkArgs');
+const caesarCode = require('./app/ceasarCode');
 
 const checkArgsValue = checkArgs();
 
-console.log(checkArgsValue);
+if (checkArgsValue.actionNum === 1) {
+  process.stdin.setEncoding('utf8');
 
-// process.stdin.setEncoding('utf8');
-//
-// process.stdin.on('readable', () => {
-//   let chunk = process.stdin.read();
-//   if (chunk !== null) {
-//     process.stdout.write(`data: ${chunk}`);
-//   }
-// });
-//
-// process.stdin.on('end', () => {
-//   process.stdout.write('end');
-// });
+  process.stdin
+    .on('data', (chunk) => {
+
+      chunk = caesarCode(checkArgsValue.action, chunk, checkArgsValue.shift);
+      process.stdout.write(`data: ${chunk}`);
+  })
+    .on('end', () => {
+    process.stdout.write('end');
+  });
+}
 
