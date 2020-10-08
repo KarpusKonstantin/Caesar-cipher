@@ -1,53 +1,39 @@
 # Ceasar Cipher CLI
 
-Command line Interface application with encripts or decripts text using the Ceasar's Cipher.
-The programm encripts or decripts only english alphabet letters. Any other characters are unganged.
+Приложение командной строки. 
 
-## How to install
+## Как настроить
 
-1. Download from the repository.
-2. Open the command line and go to the app folder.
-3. Run "npm install"
-5. You are all set to use the app
+1. Скачать код с репозитория
+2. Запустить "npm install"
+3. Готово к использованию
 
-# How to use
+# Как использовать
 
-
-After npm install **go to ceasar-cipher-cli folder** to run programm commands without attaching folder name to commands
+После установки npm пакетов зайдите в папку Ceasar-cipher
 
 ```bash
-$ cd ceasar-cipher-cli
+$ cd Ceasar-cipher
 ```
 
-After that enter the following into command line "node ceasar-cipher-cli [options]", where options are parametras which determine the operation of the app:
+После этого введите в командой строке "node ceasar-start-cli [options]", опции могу принимать следующие значения:
 
-* -s, --shift: a shift
-* -i, --input: an input file
-* -o, --output: an output file
-* -a, --action: an action encode/decode
+* -s, --shift: сдвиг (положительное, целое число)
+* -i, --input: путь к входному файлу ("./input.txt")
+* -o, --output: путь к выходному файлу ("./output.txt")
+* -a, --action: действие encode/decode
 
-The **action** option can rake values **encode** of **decode** and indicates what needs to be done with the incoming text: **encrypt** or **decrypt**.
-
-The **shift** option must be a positive integer. It denotes a **shift** of letters for encryption or decryption.
-
-**action** and **shift** options are **mandatory**: if one of them absent, there will be an error.
-
-**input** and **output** options must be relative or absolute path to file or even filename if file is in app root folder.
-
-If a file on any of the paths do not exists or path is incorrect, there will be an error.
-
-If the **input** and/or **output** options are absent, then reading and/or writing will be carried out from/to the **command line**. To interrupt the process press **Ctrl+C**
-
-Usage example:
+Пример:
 
 ```bash
-$ node ceasar-cipher-cli -a encode -s 7 -i "./input.txt" -o "./output.txt"
+$ node ceasar-start-cli -a encode -s 7 -i "./input.txt" -o "./output.txt"
 ```
 
 Before:
 
-> input.txt This is secret. Message about "_" symbol!
+> input.txt This is secret. Message about "_" symbol! Привет!!!!
 
 After:
 
-> output.txt Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!
+> output.txt Aopz pz zljyla. Tlzzhnl hivba "_" zftivs! Привет!!!!
+
